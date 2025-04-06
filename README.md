@@ -10,9 +10,9 @@ Instructions:
 3) In a command line, run "BK2_Randomizer.exe" or "py BK2_Randomizer.py". The '-s <seed#>' argument may be used for a specific seed. The '-m <mode>' may be used for the mode.
    
   Mode    Description
-   ----    -----------
-   full    This is the default mode. This modes shuffles all of the Magnus locations and Magnus Mixes.
-   qol     This mode only adds the quality of life features. 
+  
+  full    This is the default mode. This modes shuffles all of the Magnus locations and Magnus Mixes.
+  qol     This mode only adds the quality of life features. 
 
 4) In the "Seeds" folder, the patch files will be generated under the folder with that seed name. To run the game, copy those files and overwrite the normal game files.
    The game can be returned to its original state by placing the original files in their original locations.
@@ -38,7 +38,7 @@ In the command line, run "pac-man.exe" or pac-man.py". The script can be run wit
 
 
    Mode    Description
-   ------  ------------
+   
    manual  This is the default mode. This modes shuffles all of the Magnus locations and Magnus Mixes.
    auto	   This mode only adds the quality of life features. 
 
