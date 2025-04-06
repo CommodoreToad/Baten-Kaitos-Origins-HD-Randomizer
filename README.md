@@ -28,7 +28,8 @@ Changes to the base game:
 3) The cookie thugs will no longer bother you (full mode only for now).
 4) Ballet Dancer has been added to the Colesium, Rank 5: Nukerz.
 5) All Magnus Mixers now behave as Prototype Mixers.
-6) Shops can now update any Magnus.
+6) Permanet Wingdash is available as long as you have a blank Magnus.
+7) Shops can now update any Magnus.
 
 Pac-Man Script:
 
