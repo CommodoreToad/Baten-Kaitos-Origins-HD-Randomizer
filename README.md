@@ -26,9 +26,9 @@ Changes to the base game:
 1) Updated the magnus age time to be faster or slower. This is still being balanced.
 2) All quest Magnus may be thrown away at anytime except the Royal mirror. These Magnus can be obtained again.
 3) The cookie thugs will no longer bother you (full mode only for now).
-4) Ballet Dancer has been added to the Colesium, Rank 5: Nukerz.
+4) Ballet Dancer has been added to the Coliseum, Rank 5: Nukerz.
 5) All Magnus Mixers now behave as Prototype Mixers.
-6) Permanet Wingdash is available as long as you have a blank Magnus.
+6) Permanent Wingdash is available as long as you have a blank Magnus.
 7) Shops can now update any Magnus.
 
 Pac-Man Script:
