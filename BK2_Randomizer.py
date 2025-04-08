@@ -854,6 +854,20 @@ def rando():
 			if not accessible:
 				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
 				
+			# Gust Boulder
+			state = ['2'], ['3'], ['5'], ['8'], ['10'], ['11'], ['12'], ['13'], ['14'], ['15'], ['16'], ['17'], ['18'], ['19'], ['20'], ['21'], ['23'], ['24'], ['27'], ['30'], ['30a'], ['31'], ['33'], ['']
+			mags = ['650']
+			updated = True
+			while updated:
+				state, updated = update_state(state, accessible_mags, accessible_loc)
+			limit = 6 
+			accessible = False
+			for x in mags:
+				if x in state:
+					accessible = True
+			if not accessible:
+				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
+				
 			# Bloodstained Crest
 			state =  ['31'], ['32'], ['33'],['34'], ['']
 			mags = ['559']
@@ -868,7 +882,7 @@ def rando():
 			if not accessible:
 				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
 
-			# Billow smoke
+			# Billowsmoke
 			state = (['2'], ['3'], ['5'], ['8'], ['10'], ['11'], ['12'], ['13'], ['14'], ['15'], ['16'], ['17'], ['18'], ['19'], ['20'], ['21'], ['23'], ['24'], ['27'], ['30'],['30a'], ['33'], 
 			['34'], ['35'], ['36'], ['38'], [''])
 			mags = ['680']
@@ -929,8 +943,7 @@ def rando():
 				
 			# Stone
 			
-			state = (['2'],['3'],['4'],['5'], ['7'], ['8'],['10'],['11'],['12'],['13'],['14'],['15'],['16'],['17'],['18'],['19'],['20'],['21'],['23'],
-					['24'],['27'],['30'],['30a'],['33'],['34'],['35'],['36'],['38'],['39'],['40'],['41'],['42'],['43'],['44'],['45'],['46'],['47'],['48'],['49'],['50'],['51'],['52'],[''])
+			state = ['41'], ['']
 			mags = ['514']
 			updated = True
 			while updated:
@@ -958,7 +971,7 @@ def rando():
 			if not accessible:
 				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
 				
-			# Traditional Cockies
+			# Traditional Cookies
 			
 			state = ['39'], ['41'], ['42'],  ['']
 			mags = ['644']
@@ -1458,4 +1471,3 @@ if __name__ == "__main__":
 	
  
 	main(seed=args.seed, mode=args.mode)	
-
