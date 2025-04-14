@@ -1,4 +1,4 @@
-Baten Kaitos Origins Randomizer v0.2
+Baten Kaitos Origins Randomizer v0.3
 
 Instructions:
 1) Make a backup and copy the following files to "original_files" folder:
