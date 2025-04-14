@@ -12,6 +12,7 @@ Instructions:
 | Mode  | Description                                                      |
 |-------|------------------------------------------------------------------|
 | full  | This is the default mode. This mode shuffles all of the Magnus locations and Magnus Mixes. |
+| pac  | Same as "full", but you start with Pac-Man. |
 | qol   | This mode only adds the quality of life features.                 |
 
 4) In the "Seeds" folder, the patch files will be generated under the folder with that seed name. To run the game, copy those files and overwrite the normal game files.
