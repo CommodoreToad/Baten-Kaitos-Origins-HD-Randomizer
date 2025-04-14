@@ -64,6 +64,11 @@ def main(seed, mode):
 	print('Generating Seed. Please Wait.')
 	print()
 	
+	pacman = False
+	if mode == 'pac':
+		mode = 'rando'
+		pacman = True
+	
 	if mode == 'full': mode = 'rando'
 	
 	f = open(iMetaFile, 'rb')
@@ -155,6 +160,9 @@ def main(seed, mode):
 						add2=''
 					
 					mag = x[4]
+
+					if pacman and fileID == '441e61c5_0' and offset == 0x6f64:
+						mag = 549
 					
 					decomp = patch(decomp, offset, magType, add1, add2, mag)
 
@@ -520,6 +528,7 @@ def main(seed, mode):
 	f4.close() 
 	
 	if mode == 'rando':
+		if pacman == True: mode = 'Pac-Man'
 		generate_spoiler(location, orig_location, progression, seed,mode)
 	else:
 		if getattr(sys, 'frozen', False):
@@ -539,7 +548,6 @@ def main(seed, mode):
 		f5.write('dll MD5 Hash :\t' + str(dllHash))
 		f5.close()
 
-		
 def patch(decomp, offset, magType, add1, add2,mag):
 	
 
@@ -824,7 +832,53 @@ def rando():
 					accessible = True
 			if not accessible:
 				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
-				
+
+			# Mallo's Testimony
+			
+			state = ['2'], ['3'], ['5'], ['8'], ['10'], ['15'], ['16'], ['17'], ['19'], ['20'], ['23'], ['']
+			mags = ['544']
+			updated = True
+			while updated:
+				state, updated = update_state(state, accessible_mags, accessible_loc)
+			limit = 6 
+			accessible = False
+			for x in mags:
+				if x in state:
+					accessible = True
+			if not accessible:
+				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
+
+			# Juwar's Testimony
+			
+			state = ['2'], ['3'], ['5'], ['8'], ['10'], ['15'], ['16'], ['17'], ['19'], ['20'], ['23'], ['']
+			mags = ['541']
+			updated = True
+			while updated:
+				state, updated = update_state(state, accessible_mags, accessible_loc)
+			limit = 6 
+			accessible = False
+			for x in mags:
+				if x in state:
+					accessible = True
+			if not accessible:
+				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
+
+			# Rockfly Corpse
+			
+			state = (['2'],['3'],['4'],['5'], ['7'], ['8'],['10'],['11'],['12'],['13'],['14'],['15'],['16'],['17'],['18'],['19'],['20'],['21'],['23'],
+					['24'],['27'],['30'],['30a'],['33'],['34'],['35'],['36'],['38'],['39'],['40'],['41'],['42'],['43'],['44'],['45'],['46'],['47'],['48'],['49'],['50'],['51'],['52'],['54'],[''])
+			mags = ['669']
+			updated = True
+			while updated:
+				state, updated = update_state(state, accessible_mags, accessible_loc)
+			limit = 6 
+			accessible = False
+			for x in mags:
+				if x in state:
+					accessible = True
+			if not accessible:
+				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
+			
 			# Eau de Mouce
 			
 			state = ['2'], ['3'], ['5'], ['8'], ['10'], ['15'], ['16'], ['17'], ['19'], ['20'], ['23'], ['']
@@ -971,7 +1025,7 @@ def rando():
 			if not accessible:
 				rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
 				
-			# Traditional Cookies
+			# Traditional Coockies
 			
 			state = ['39'], ['41'], ['42'],  ['']
 			mags = ['644']
@@ -1290,13 +1344,13 @@ def find_location2(state, mags, rand_location, rand_mag, new_location,accessible
 					new_location.append(rand_location[x])
 					new_location[-1][4] = rand_location[x][4]
 					length = len(new_location)-1
-
 					for z in range(7,15):
-						if new_location[length][z] not in state and new_location[length][z] !='':
+						if [new_location[length][z]] not in state and new_location[length][z] !='':
 							rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location2(state, new_location[length][z], rand_location, rand_mag, new_location,accessible_mags,accessible_loc, limit)
 							updated = True
 							while updated:
 								state, updated = update_state(state, accessible_mags, accessible_loc)
+
 					
 					abort = True
 					break
@@ -1408,13 +1462,18 @@ def generate_spoiler(new_location, location, progression, seed,rMode):
 		if location[x][0] != 'Magnus Mix':
 			for y in range(len(new_location)):
 				if (location[x][:4] == new_location[y][:4]):
-					mag = new_location[y][4]
-					break
+					if rMode == 'Pac-Man' and location[x][2:4] == ['441e61c5_0','6f60']:
+						mag = '549'
+						break
+					else:
+						mag = new_location[y][4]
+						break
 		else:
 			for y in range(len(new_location)):
 				if (location[x][6:15] == new_location[y][6:15]):
 					mag = new_location[y][4]
 					break
+					
 		if location[x][0] != 'Magnus Mix' and location[x][5] != 'Overwrite' :
 			length1 = 4-int(math.floor(len(location[x][1])/8))
 			length2 = 4-int(math.floor(len(location[x][5])/8))
