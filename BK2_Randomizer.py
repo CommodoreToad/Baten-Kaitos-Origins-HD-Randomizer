@@ -542,7 +542,7 @@ def main(seed, mode):
 		dllHash = hashlib.md5(open(dllFile,'rb').read()).hexdigest()
 		
 		f5 = open(metaFile ,'w')
-		f5.write('Baten Kaitos Origins Randomizer v0.2\n')
+		f5.write('Baten Kaitos Origins Randomizer v0.3\n')
 		f5.write('Created: ' + cTime + '\n')
 		f5.write('Mode :\t' + mode + '\n')
 		f5.write('dll MD5 Hash :\t' + str(dllHash))
@@ -1429,14 +1429,14 @@ def generate_spoiler(new_location, location, progression, seed,rMode):
 	cTime = time.ctime(time.time())
 	if rMode == 'rando': rMode = 'Full'
 	
-	f5.write('Baten Kaitos Origins Randomizer v0.2\n')
+	f5.write('Baten Kaitos Origins Randomizer v0.3\n')
 	f5.write('Created: ' + cTime + '\n')
 	f5.write('Seed :\t' + seed + '\n')
 	f5.write('Mode :\t' + rMode + '\n')
 	f5.write('Meta MD5 Hash :\t' + str(metaHash) + '\n')
 	f5.write('dll MD5 Hash :\t' + str(dllHash) + '\n\n')
 	
-	f6.write('Baten Kaitos Origins Randomizer v0.2\n')
+	f6.write('Baten Kaitos Origins Randomizer v0.3\n')
 	f6.write('Created: ' + cTime + '\n')
 	f6.write('Seed :\t' + seed + '\n')
 	f6.write('Mode :\t' + rMode + '\n')
