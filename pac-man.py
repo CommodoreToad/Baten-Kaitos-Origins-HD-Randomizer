@@ -46,6 +46,7 @@ def main(mode):
 				#print(x,mag_list[x])
 			elif x not in exclusion:
 				found+=1
+		f1.close()
 		
 		eaten = sorted(eaten)
 		n= 50
