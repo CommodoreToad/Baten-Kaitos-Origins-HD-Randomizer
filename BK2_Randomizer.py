@@ -655,11 +655,6 @@ def rando():
 			state = ['14'],['']
 			mags = ['501','502','503']
 			rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc)
-
-			# Mintaka Mchina Oil
-			state = ['15'],['']
-			mags = ['563']
-			rand_location,rand_mag, new_location,accessible_mags,accessible_loc = find_location(state, mags, rand_location, rand_mag, new_location,accessible_mags,accessible_loc)
 			
 			# Fresh/Foul Air
 			state = (['2'],['3'],['4'],['5'], ['7'], ['8'],['10'],['11'],['12'],['13'],['14'],['15'],['16'],['17'],['18'],['19'],['20'],['21'],['23'],
